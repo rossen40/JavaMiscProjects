@@ -89,6 +89,7 @@ public class DamageCalculator {
             totalDamage += army.getCalculatedDamage() * Math.sqrt(army.getTroopsNumber());
         }
         totalArmyDamage = totalDamage;
+        logger.info(printResults());
     }
 
     private void validateResult() {

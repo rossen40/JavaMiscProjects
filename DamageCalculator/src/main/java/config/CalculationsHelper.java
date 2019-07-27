@@ -30,8 +30,8 @@ public class CalculationsHelper {
         BASE_UNIT_STATS_PER_ARMYTYPE = Collections.unmodifiableMap(configuration.BASE_UNIT_STATS_PER_ARMYTYPE);
         {
             Map<ArmyType, Double> tempMap = new HashMap<>();
-            tempMap.put(ArmyType.DISTANCE, input.getTroopAttack() + input.getDistanceAttack());
-            tempMap.put(ArmyType.CAVALRY, input.getTroopAttack() + input.getCavalryAttack());
+            tempMap.put(ArmyType.DISTANCE, input.getTroopAttack() + input.getDistanceAttack() + 0.165 * (input.getTroopDefense() + input.getDistanceDefense()));
+            tempMap.put(ArmyType.CAVALRY, input.getTroopAttack() + input.getCavalryAttack() + 0.167 * (input.getTroopDefense() + input.getCavalryDefense()));
             tempMap.put(ArmyType.INFANTRY, input.getTroopAttack() + input.getInfantryAttack());
             tempMap.put(ArmyType.ARTILLERY, input.getTroopAttack() + input.getArtilleryAttack());
             ATTACK_MODIFIERS = Collections.unmodifiableMap(tempMap);
